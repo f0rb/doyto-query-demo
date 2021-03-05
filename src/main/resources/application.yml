@@ -3,3 +3,8 @@ doyto:
     config:
       dialect: win.doyto.query.demo.common.HsqldbDialect
       map-camel-case-to-underscore: true
+
+logging:
+  level:
+    org.springframework.web.servlet.mvc.method.annotation: trace
+    win.doyto.query.core.SqlAndArgs: debug
