@@ -85,4 +85,11 @@ class RoleControllerTest extends DemoApplicationTests {
         ;
     }
 
+    @Test
+    void pageStartFromOne() throws Exception {
+        performAndExpectSuccess(get("/role/?pageNumber=1&pageSize=2"))
+                .andExpect(jsonPath("$.data.list[0].id").value(1))
+        ;
+    }
+
 }
