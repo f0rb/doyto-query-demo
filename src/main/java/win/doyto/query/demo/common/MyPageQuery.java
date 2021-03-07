@@ -14,9 +14,9 @@ import win.doyto.query.core.PageQuery;
 public class MyPageQuery extends PageQuery {
 
     @Override
-    public Integer getPageNumber() {
-        Integer pageNumber = super.getPageNumber();
-        return pageNumber == null ? null : Math.max(pageNumber - 1, 0);
+    public int calcOffset() {
+        Integer pageNumber = getPageNumber();
+        return pageNumber != null ? getPageSize() * Math.max(pageNumber - 1, 0) : 0;
     }
 
 }
